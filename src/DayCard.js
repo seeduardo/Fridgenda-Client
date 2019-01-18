@@ -5,10 +5,11 @@ class DayCard extends Component {
     super(props);
     this.state = {}
   }
+
   render() { 
     return (
       <div>
-        <h1>Day</h1>
+        <div>Day</div>
       </div>
     );
   }
