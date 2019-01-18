@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import DayCardHolder from './DayCardHolder';
 
-class Agenda extends Component {
+class DayCard extends Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -9,10 +8,10 @@ class Agenda extends Component {
   render() { 
     return (
       <div>
-        <DayCardHolder />
+        <h1>Day</h1>
       </div>
     );
   }
 }
  
-export default Agenda;
+export default DayCard;

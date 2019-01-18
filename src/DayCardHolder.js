@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DayCard from './DayCard';
 
 class DayCardHolder extends Component {
   constructor(props) {
@@ -6,7 +7,17 @@ class DayCardHolder extends Component {
     this.state = {}
   }
   render() { 
-    return (null);
+    return( 
+      <div>
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+      </div>
+    )
   }
 }
  
