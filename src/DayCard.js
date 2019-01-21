@@ -10,7 +10,7 @@ class DayCard extends Component {
 
   render() { 
     return (
-      <Card>
+      <Card color='red'>
         <Card.Content>
           <Card.Header>{this.props.day.format('dddd MMMM Do YYYY')}</Card.Header>
           <Card.Description>
