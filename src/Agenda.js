@@ -17,6 +17,8 @@ class Agenda extends Component {
             <DayCardHolder />
           </Grid.Column>
           <Grid.Column>
+          </Grid.Column>
+          <Grid.Column>
             <RecipeCardHolder />
           </Grid.Column>
         </Grid.Row>

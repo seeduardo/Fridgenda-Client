@@ -19,7 +19,8 @@ class DayCardHolder extends Component {
 
   render() { 
     return (
-      <div><h1>It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
+      <div>
+        <h1>It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
         <Card.Group itemsPerRow={1}>
           <DayCard id="1" day={moment().startOf("week").day(1)} />
           <DayCard id="2" day={moment().startOf("week").day(2)}/>
