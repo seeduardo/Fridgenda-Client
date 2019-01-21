@@ -10,8 +10,17 @@ class RecipeCard extends Component {
     this.state = {  }
   }
 
+  renderSpecificCard = () => {
+
+  }
+
+  getRandomRecipe = () => {
+    const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
+    return <Recipe name={randomRecipe} />
+  }
+
   yourTopRecipes = () => {
-    this.props.recipes.map(recipe => <Recipe name={recipe} />)
+   return this.props.recipes.map((recipe, index) => <Recipe name={recipe} key={index} />)
   }
 
   render() { 
@@ -21,9 +30,11 @@ class RecipeCard extends Component {
           <Card.Header>{this.props.title}</Card.Header>
           <div>
             {
-              this.props.recipes
-                ? this.props.recipes.map(recipe => <Recipe name={recipe} />)
-                : null
+              this.props.title === "Your Top Recipes"
+                ? this.yourTopRecipes()
+                : (this.props.title === "Recipe of the Day"
+                  ? this.getRandomRecipe()
+                  : null)
             }
           </div>
         </Card.Content>
