@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react'
+import Recipe from './Recipe';
+
 
 
 class RecipeCard extends Component {
@@ -7,20 +9,32 @@ class RecipeCard extends Component {
     super(props);
     this.state = {  }
   }
+
+  yourTopRecipes = () => {
+    this.props.recipes.map(recipe => <Recipe name={recipe} />)
+  }
+
   render() { 
     return ( 
       <Card color='red'>
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
-          <Card.Description>
-            <p>Pancakes</p>
-            <p>Chicken Curry</p>
-            <p>Bastard</p>
-          </Card.Description>
+          <div>
+            {
+              this.props.recipes
+                ? this.props.recipes.map(recipe => <Recipe name={recipe} />)
+                : null
+            }
+          </div>
         </Card.Content>
+        
       </Card>
      );
   }
 }
  
 export default RecipeCard;
+
+/*
+
+*/
