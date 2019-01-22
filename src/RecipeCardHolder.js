@@ -4,17 +4,14 @@ import { Card } from 'semantic-ui-react';
 
 
 class RecipeCardHolder extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       recipes: [
-        "Pancakes",
-        "Chicken Curry",
-        "Black Forest Gateaux",
-        "Bastard",
-        "Plain Noodles",
+        {title: "Pancakes"},
+        {title: "Chicken Curry"},
+        {title: "Black Forest Gateaux"},
+        {title: "Bastard"},
+        {title: "Plain Noodles"},
       ]
-    }
   }
 
   render() { 

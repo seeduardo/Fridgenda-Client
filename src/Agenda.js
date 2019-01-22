@@ -7,7 +7,7 @@ import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
 
 class Agenda extends Component {
- state = initialData
+ state = {mealAgenda: initialData}
   
   render() { 
     return (

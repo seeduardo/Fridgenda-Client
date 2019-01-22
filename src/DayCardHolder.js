@@ -8,10 +8,8 @@ import { Card } from 'semantic-ui-react';
 // let today = moment().day()
 
 class DayCardHolder extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
+  state = {}
+  
 
   createDayCards = () => {
 
@@ -20,7 +18,6 @@ class DayCardHolder extends Component {
   render() { 
     return (
       <div>
-        <h1>It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
         <Card.Group itemsPerRow={1}>
           <DayCard id="1" day={moment().startOf("week").day(1)} />
           <DayCard id="2" day={moment().startOf("week").day(2)}/>

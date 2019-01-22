@@ -16,11 +16,11 @@ class RecipeCard extends Component {
 
   getRandomRecipe = () => {
     const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
-    return <Recipe name={randomRecipe} />
+    return <Recipe name={randomRecipe.title} />
   }
 
   yourTopRecipes = () => {
-   return this.props.recipes.map((recipe, index) => <Recipe name={recipe} key={index} />)
+   return this.props.recipes.map((recipe, index) => <Recipe name={recipe.title} key={index} />)
   }
 
   render() { 
