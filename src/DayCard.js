@@ -13,11 +13,20 @@ class DayCard extends Component {
       <Card color='red'>
         <Card.Content>
           <Card.Header>{this.props.day.format('dddd MMMM Do YYYY')}</Card.Header>
-          <Card.Description>
-            <p>Breakfast</p>
-            <p>Lunch</p>
-            <p>Dinner</p>
-          </Card.Description>
+          <div>
+            <div>
+              <p>Breakfast:</p>
+              <p>{this.props.mealsThatDay.Breakfast.title}</p>
+            </div>
+            <div>
+              <p>Lunch:</p>
+              <p>{this.props.mealsThatDay.Lunch.title}</p>
+            </div>
+            <div>
+              <p>Dinner:</p>
+              <p>{this.props.mealsThatDay.Dinner.title}</p>
+            </div>
+          </div>
           </Card.Content>
       </Card>
     )

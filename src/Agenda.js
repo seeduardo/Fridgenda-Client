@@ -16,7 +16,7 @@ class Agenda extends Component {
         <Grid divided='vertically'>
           <Grid.Row columns={3}>
             <Grid.Column>
-              <DayCardHolder />
+              <DayCardHolder mealAgenda={this.state.mealAgenda}/>
             </Grid.Column>
             <Grid.Column>
             </Grid.Column>

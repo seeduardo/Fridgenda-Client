@@ -1,6 +1,6 @@
 const initialData = {
   Monday: {
-    Breakfast: {},
+    Breakfast: { title: "Pancakes" },
     Lunch: {},
     Dinner: {},
   },
@@ -25,12 +25,12 @@ const initialData = {
     Dinner: {},
   },
   Saturday: {
-    Breakfast: {},
+    Breakfast: { title: "Pancakes" },
     Lunch: {},
     Dinner: {},
   },
   Sunday: {
-    Breakfast: {},
+    Breakfast: { title: "Pancakes" },
     Lunch: {},
     Dinner: {},
   },
