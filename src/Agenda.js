@@ -7,8 +7,23 @@ import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
 
 class Agenda extends Component {
- state = {mealAgenda: initialData}
+ state = {
+   mealAgenda: initialData,
+   recipes: []
+  }
   
+  componentDidMount = () => {
+    this.getRecipes()
+  }
+
+  getRecipes = () => {
+    fetch("http://localhost:3001/api/v1/recipes")
+      .then(resp => resp.json())
+      .then(data => {
+        this.setState({recipes: data})
+      })
+  } 
+
   render() { 
     return (
       <React.Fragment>
@@ -21,7 +36,7 @@ class Agenda extends Component {
             <Grid.Column>
             </Grid.Column>
             <Grid.Column>
-              <RecipeCardHolder />
+              <RecipeCardHolder recipes={this.state.recipes}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

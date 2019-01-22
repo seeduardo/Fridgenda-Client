@@ -18,8 +18,8 @@ class RecipeCardHolder extends Component {
     return (
       <div>
         <Card.Group itemsPerRow={1}>
-          <RecipeCard key="1" title="Your Top Recipes" recipes={this.state.recipes}/>
-          <RecipeCard key="2" title="Recipe of the Day" recipes={this.state.recipes}/>
+          <RecipeCard key="1" title="Your Top Recipes" recipes={this.props.recipes}/>
+          <RecipeCard key="2" title="Recipe of the Day" recipes={this.props.recipes}/>
           <RecipeCard key="3" title="Search/See all Recipes"/>
         </Card.Group>
       </div>

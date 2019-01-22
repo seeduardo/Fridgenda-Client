@@ -5,22 +5,25 @@ import Recipe from './Recipe';
 
 
 class RecipeCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
+  state = {  
+    
   }
+  
 
   renderSpecificCard = () => {
 
   }
 
   getRandomRecipe = () => {
-    const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
-    return <Recipe name={randomRecipe.title} />
+    if (Object.keys(this.props.recipes).length !== 0) {
+      const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
+      return <Recipe name={randomRecipe.name} />
+    }
   }
 
-  yourTopRecipes = () => {
-   return this.props.recipes.map((recipe, index) => <Recipe name={recipe.title} key={index} />)
+  yourTopRecipes = () => { 
+    const topFiveRecipes = this.props.recipes.slice(0, 5)
+    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} />)
   }
 
   render() { 
