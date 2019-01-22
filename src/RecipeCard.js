@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react'
+import { Droppable } from 'react-beautiful-dnd';
+
 import Recipe from './Recipe';
 
 
 
 class RecipeCard extends Component {
   state = {  
-    
+
   }
   
 
@@ -31,15 +33,19 @@ class RecipeCard extends Component {
       <Card color='red'>
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
-          <div>
-            {
-              this.props.title === "Your Top Recipes"
-                ? this.yourTopRecipes()
-                : (this.props.title === "Recipe of the Day"
-                  ? this.getRandomRecipe()
-                  : null)
-            }
-          </div>
+          <Droppable droppableId={this.props.id} >
+            { (provided) => (
+            <div>
+              {
+                this.props.title === "Your Top Recipes"
+                  ? this.yourTopRecipes()
+                  : (this.props.title === "Recipe of the Day"
+                    ? this.getRandomRecipe()
+                    : null)
+              }
+            </div>
+            )}
+          </Droppable>
         </Card.Content>
         
       </Card>
