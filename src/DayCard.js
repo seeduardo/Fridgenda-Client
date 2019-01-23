@@ -26,13 +26,13 @@ class DayCard extends Component {
                   <Draggable draggableId={`${this.props.id}`}
                    index={0} >
                     { (provided) => (
-                      <p
+                      <div
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                       >
                         {this.props.mealsThatDay.Breakfast.title}
-                      </p>
+                      </div>
                     )}
                   </Draggable>
                   {provided.placeholder}
@@ -48,13 +48,13 @@ class DayCard extends Component {
                   <Draggable draggableId={this.props.id}
                    index={1} >
                     { (provided) => (
-                      <p
+                      <div
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                       >
                         {this.props.mealsThatDay.Lunch.title}
-                      </p>
+                      </div>
                     )}
                   </Draggable>
 
@@ -71,13 +71,13 @@ class DayCard extends Component {
                   <Draggable draggableId={this.props.id}
                    index={2} >
                     { (provided) => (
-                      <p
+                      <div
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                       >
                         {this.props.mealsThatDay.Dinner.title}
-                      </p>
+                      </div>
                     )}
                   </Draggable>
 

@@ -17,7 +17,7 @@ class RecipeCard extends Component {
 
   getRandomRecipe = () => {
     const randomNotReallyRandom = this.props.recipes.slice(17, 18)
-    return randomNotReallyRandom.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} />)
+    return randomNotReallyRandom.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} getClickedRecipe={this.props.getClickedRecipe}/>)
     // if (Object.keys(this.props.recipes).length !== 0) {
     //   const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
     //   return <Recipe name={randomRecipe.name} id={randomRecipe.id} index={randomRecipe.id} />
@@ -26,7 +26,7 @@ class RecipeCard extends Component {
 
   yourTopRecipes = () => {
     const topFiveRecipes = this.props.recipes.slice(0, 5)
-    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} />)
+    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} getClickedRecipe={this.props.getClickedRecipe}/>)
   }
 
   render() {

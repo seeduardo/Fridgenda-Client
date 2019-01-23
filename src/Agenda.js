@@ -47,6 +47,10 @@ class Agenda extends Component {
 
   }
 
+  getClickedRecipe = (recipeName) => {
+    console.log(recipeName)
+  }
+
   render() {
     return (
       <DragDropContext
@@ -60,7 +64,7 @@ class Agenda extends Component {
             <Grid.Column>
             </Grid.Column>
             <Grid.Column>
-              <RecipeCardHolder recipes={this.state.recipes}/>
+              <RecipeCardHolder recipes={this.state.recipes} getClickedRecipe={this.getClickedRecipe}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>
