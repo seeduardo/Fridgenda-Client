@@ -7,35 +7,40 @@ import Recipe from './Recipe';
 
 
 class RecipeCard extends Component {
-  state = {  
+  state = {
 
   }
-  
+
 
   renderSpecificCard = () => {
 
   }
 
+  // How to get index into Recipe in getRandomRecipe?
+
   getRandomRecipe = () => {
     if (Object.keys(this.props.recipes).length !== 0) {
       const randomRecipe =  this.props.recipes[Math.floor(Math.random() * this.props.recipes.length)]
-      return <Recipe name={randomRecipe.name} />
+      return <Recipe name={randomRecipe.name} id={randomRecipe.id} index={0} />
     }
   }
 
-  yourTopRecipes = () => { 
+  yourTopRecipes = () => {
     const topFiveRecipes = this.props.recipes.slice(0, 5)
-    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} />)
+    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} />)
   }
 
-  render() { 
-    return ( 
+  render() {
+    return (
       <Card color='red'>
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
           <Droppable droppableId={this.props.id} >
-            { (provided) => (
-            <div>
+            {(provided) => (
+            <div
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
               {
                 this.props.title === "Your Top Recipes"
                   ? this.yourTopRecipes()
@@ -43,16 +48,17 @@ class RecipeCard extends Component {
                     ? this.getRandomRecipe()
                     : null)
               }
+              {provided.placeholder}
             </div>
             )}
           </Droppable>
         </Card.Content>
-        
+
       </Card>
      );
   }
 }
- 
+
 export default RecipeCard;
 
 /*

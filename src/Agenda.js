@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react'
 import moment from "moment";
 import { DragDropContext } from 'react-beautiful-dnd';
-
 import RecipeCardHolder from './RecipeCardHolder';
 import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
@@ -23,15 +22,15 @@ class Agenda extends Component {
       .then(data => {
         this.setState({recipes: data})
       })
-  } 
+  }
 
   onDragEnd = result => {
 
   }
 
-  render() { 
+  render() {
     return (
-      <DragDropContext 
+      <DragDropContext
         onDragEnd={this.onDragEnd}>
         <h1>Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
         <Grid divided='vertically'>
@@ -50,5 +49,5 @@ class Agenda extends Component {
     )
   }
 }
- 
+
 export default Agenda;
