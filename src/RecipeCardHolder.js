@@ -5,16 +5,9 @@ import { Card } from 'semantic-ui-react';
 
 class RecipeCardHolder extends Component {
   state = {
-      recipes: [
-        {title: "Pancakes"},
-        {title: "Chicken Curry"},
-        {title: "Black Forest Gateaux"},
-        {title: "Bastard"},
-        {title: "Plain Noodles"},
-      ]
   }
 
-  render() { 
+  render() {
     return (
       <div>
         <Card.Group itemsPerRow={1}>
@@ -26,5 +19,5 @@ class RecipeCardHolder extends Component {
     )
   }
 }
- 
+
 export default RecipeCardHolder;

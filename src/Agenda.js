@@ -11,7 +11,7 @@ class Agenda extends Component {
    mealAgenda: initialData,
    recipes: []
   }
-  
+
   componentDidMount = () => {
     this.getRecipes()
   }
@@ -25,7 +25,7 @@ class Agenda extends Component {
   }
 
   onDragEnd = result => {
-
+    console.log(result)
   }
 
   render() {
