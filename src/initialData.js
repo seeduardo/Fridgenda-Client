@@ -6,7 +6,7 @@ const initialData = {
   },
   Tuesday: {
     Breakfast: {},
-    Lunch: {},
+    Lunch: {title: "Fish"},
     Dinner: {},
   },
   Wednesday: {
