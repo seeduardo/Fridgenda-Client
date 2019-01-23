@@ -23,7 +23,7 @@ class DayCard extends Component {
                 {...provided.droppableProps}>
                   <p>Breakfast:</p>
 
-                  <Draggable draggableId={this.props.id}
+                  <Draggable draggableId={`${this.props.id}`}
                    index={0} >
                     { (provided) => (
                       <p
@@ -46,7 +46,7 @@ class DayCard extends Component {
                   <p>Lunch:</p>
 
                   <Draggable draggableId={this.props.id}
-                   index={0} >
+                   index={1} >
                     { (provided) => (
                       <p
                         {...provided.draggableProps}
@@ -57,7 +57,7 @@ class DayCard extends Component {
                       </p>
                     )}
                   </Draggable>
-                  
+
                   {provided.placeholder}
                 </div>
                 )}
@@ -67,7 +67,20 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Dinner:</p>
-                  <p>{this.props.mealsThatDay.Dinner.title}</p>
+
+                  <Draggable draggableId={this.props.id}
+                   index={2} >
+                    { (provided) => (
+                      <p
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        {this.props.mealsThatDay.Dinner.title}
+                      </p>
+                    )}
+                  </Draggable>
+
                   {provided.placeholder}
                 </div>
                 )}

@@ -25,7 +25,26 @@ class Agenda extends Component {
   }
 
   onDragEnd = result => {
-    console.log(result)
+    console.log(result);
+
+    const { destination, source, draggableId } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    const startDayCard = source.droppableId;
+    console.log(startDayCard)
+    const finishDayCard = destination.droppableId;
+
+
   }
 
   render() {

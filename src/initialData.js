@@ -17,7 +17,7 @@ const initialData = {
   Thursday: {
     Breakfast: {},
     Lunch: {},
-    Dinner: {},
+    Dinner: {title: "Baked Carrot Chorizo Arctic Roll"},
   },
   Friday: {
     Breakfast: {},
