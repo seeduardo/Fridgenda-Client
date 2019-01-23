@@ -11,9 +11,9 @@ class RecipeCardHolder extends Component {
     return (
       <div>
         <Card.Group itemsPerRow={1}>
-          <RecipeCard id="1" key="1" title="Your Top Recipes" recipes={this.props.recipes}/>
-          <RecipeCard id="2" key="2" title="Recipe of the Day" recipes={this.props.recipes}/>
-          <RecipeCard id="3" key="3" title="Search/See all Recipes"/>
+          <RecipeCard id="recipe-card-1" key="1" title="Your Top Recipes" recipes={this.props.recipes}/>
+          <RecipeCard id="recipe-card-2" key="2" title="Recipe of the Day" recipes={this.props.recipes}/>
+          <RecipeCard id="recipe-card-3" key="3" title="Search/See all Recipes"/>
         </Card.Group>
       </div>
     )
