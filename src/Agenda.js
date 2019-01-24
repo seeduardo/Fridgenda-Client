@@ -67,21 +67,21 @@ class Agenda extends Component {
       return;
     }
 
-    if (
-      destination.droppableId === source.droppableId &&
-      destination.index === source.index
-    ) {
-      return;
-    }
+    // if (
+    //   destination.droppableId === source.droppableId &&
+    //   destination.index === source.index
+    // ) {
+    //   return;
+    // }
 
-    const startCard = source;
+    const startCardData = source;
     const finishDayCardMeal = destination.droppableId;
-    // const newState = state.mealAgenda[targetDayCard][targetdaycardmeal] = recipethatwasdragged
-    // this.setState(...this.state, something: newState )
+
+    
 
     if (finishDayCardMeal.includes("tuesday") && finishDayCardMeal.includes("breakfast")) {
       console.log(this.state, "When Tuesday case is triggered")
-      const selectedRecipeIndex = startCard.index
+      const selectedRecipeIndex = startCardData.index
       const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
       const currentMealAgendaState = Object.assign(this.state.mealAgenda)
       const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
@@ -89,6 +89,8 @@ class Agenda extends Component {
         mealAgenda: { ...currentMealAgendaState, Tuesday: { ...currentTuesdayMealPlan, Breakfast: selectedRecipe }}
       })
     }
+
+
 
   }
 
