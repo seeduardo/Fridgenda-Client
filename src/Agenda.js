@@ -19,7 +19,12 @@ class Agenda extends Component {
   }
 
   componentDidMount = () => {
+    console.log(this.state, "Component did mount")
     this.getRecipes()
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.state, "Component did update")
   }
 
   getRecipes = () => {
@@ -75,15 +80,14 @@ class Agenda extends Component {
     // this.setState(...this.state, something: newState )
 
     if (finishDayCardMeal.includes("tuesday") && finishDayCardMeal.includes("breakfast")) {
-      console.log(this.state)
+      console.log(this.state, "When Tuesday case is triggered")
       const selectedRecipeIndex = startCard.index
       const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
       const currentMealAgendaState = Object.assign(this.state.mealAgenda)
       const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
       this.setState({
-        mealAgenda: { ...currentMealAgendaState, Tuesday: {...currentTuesdayMealPlan, Breakfast: selectedRecipe} }
+        mealAgenda: { ...currentMealAgendaState, Tuesday: { ...currentTuesdayMealPlan, Breakfast: selectedRecipe }}
       })
-      console.log(this.state, "Second Log");
     }
 
   }

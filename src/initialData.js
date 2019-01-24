@@ -1,12 +1,12 @@
 const initialData = {
   Monday: {
-    Breakfast: { title: "Pancakes" },
-    Lunch: { title: "Monday Lunch" },
+    Breakfast: {},
+    Lunch: {},
     Dinner: {},
   },
   Tuesday: {
     Breakfast: {},
-    Lunch: {title: "Fish"},
+    Lunch: {},
     Dinner: {},
   },
   Wednesday: {
@@ -17,7 +17,7 @@ const initialData = {
   Thursday: {
     Breakfast: {},
     Lunch: {},
-    Dinner: {title: "Baked Carrot Chorizo Arctic Roll"},
+    Dinner: {},
   },
   Friday: {
     Breakfast: {},
@@ -25,12 +25,12 @@ const initialData = {
     Dinner: {},
   },
   Saturday: {
-    Breakfast: { title: "Pancakes" },
+    Breakfast: {},
     Lunch: {},
     Dinner: {},
   },
   Sunday: {
-    Breakfast: { title: "Pancakes" },
+    Breakfast: {},
     Lunch: {},
     Dinner: {},
   },
