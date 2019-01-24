@@ -5,11 +5,17 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import RecipeCardHolder from './RecipeCardHolder';
 import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
+import Recipe from './Recipe';
+
 
 class Agenda extends Component {
  state = {
    mealAgenda: initialData,
-   recipes: []
+   recipesData: {
+    allRecipes: [],
+    topRecipes: [],
+    recipeOfTheDay: []
+   }
   }
 
   componentDidMount = () => {
@@ -20,8 +26,31 @@ class Agenda extends Component {
     fetch("http://localhost:3001/api/v1/recipes")
       .then(resp => resp.json())
       .then(data => {
-        this.setState({recipes: data})
+        const currentRecipesDataState = Object.assign(this.state.recipesData)
+        this.setState({
+          recipesData: {...currentRecipesDataState, allRecipes: data}
+        })
       })
+    .then(() => {
+      this.setTopRecipes()
+      this.setRecipeOfTheDay()
+    })
+  }
+
+  setRecipeOfTheDay = () => {
+    const randomNotReallyRandom = this.state.recipesData.allRecipes.slice(17, 18)
+    const currentRecipesDataState = Object.assign(this.state.recipesData)
+    this.setState({
+      recipesData: { ...currentRecipesDataState, recipeOfTheDay: randomNotReallyRandom }
+    })
+  }
+
+  setTopRecipes = () => {
+    const topFiveRecipes = this.state.recipesData.allRecipes.slice(0, 5)
+    const currentRecipesDataState = Object.assign(this.state.recipesData)
+    this.setState({
+      recipesData: { ...currentRecipesDataState, topRecipes: topFiveRecipes }
+    })
   }
 
   onDragEnd = result => {
@@ -40,16 +69,25 @@ class Agenda extends Component {
       return;
     }
 
-    const startDayCard = source.droppableId;
-    console.log(startDayCard)
-    const finishDayCard = destination.droppableId;
+    const startCard = source;
+    const finishDayCardMeal = destination.droppableId;
+    // const newState = state.mealAgenda[targetDayCard][targetdaycardmeal] = recipethatwasdragged
+    // this.setState(...this.state, something: newState )
 
+    if (finishDayCardMeal.includes("tuesday") && finishDayCardMeal.includes("breakfast")) {
+      console.log(this.state)
+      const selectedRecipeIndex = startCard.index
+      const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
+      const currentMealAgendaState = Object.assign(this.state.mealAgenda)
+      const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
+      this.setState({
+        mealAgenda: { ...currentMealAgendaState, Tuesday: {...currentTuesdayMealPlan, Breakfast: selectedRecipe} }
+      })
+      console.log(this.state, "Second Log");
+    }
 
   }
 
-  getClickedRecipe = (recipeName) => {
-    console.log(recipeName)
-  }
 
   render() {
     return (
@@ -64,7 +102,7 @@ class Agenda extends Component {
             <Grid.Column>
             </Grid.Column>
             <Grid.Column>
-              <RecipeCardHolder recipes={this.state.recipes} getClickedRecipe={this.getClickedRecipe}/>
+              <RecipeCardHolder recipesData={this.state.recipesData} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

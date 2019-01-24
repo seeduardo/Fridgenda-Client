@@ -22,7 +22,19 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Breakfast:</p>
-                  <p>{this.props.mealsThatDay.Breakfast.title}</p>
+
+                  <Draggable draggableId={`${this.props.id}`}
+                   index={0} >
+                    { (provided) => (
+                      <div
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        {this.props.mealsThatDay.Breakfast.title}
+                      </div>
+                    )}
+                  </Draggable>
                   {provided.placeholder}
                 </div>
                 )}
@@ -32,7 +44,20 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Lunch:</p>
-                  <p>{this.props.mealsThatDay.Lunch.title}</p>
+
+                  <Draggable draggableId={this.props.id}
+                   index={1} >
+                    { (provided) => (
+                      <div
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        {this.props.mealsThatDay.Lunch.title}
+                      </div>
+                    )}
+                  </Draggable>
+
                   {provided.placeholder}
                 </div>
                 )}
@@ -42,7 +67,20 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Dinner:</p>
-                  <p>{this.props.mealsThatDay.Dinner.title}</p>
+
+                  <Draggable draggableId={this.props.id}
+                   index={2} >
+                    { (provided) => (
+                      <div
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        {this.props.mealsThatDay.Dinner.title}
+                      </div>
+                    )}
+                  </Draggable>
+
                   {provided.placeholder}
                 </div>
                 )}
