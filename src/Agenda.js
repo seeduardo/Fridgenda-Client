@@ -75,25 +75,32 @@ class Agenda extends Component {
     // }
 
     const startCardData = source;
-    const finishDayCardMeal = destination.droppableId;
+    const finishDayCardMealTime = destination.droppableId;
 
-    
+    this.addRecipeToMealPlan(startCardData, finishDayCardMealTime)
 
-    if (finishDayCardMeal.includes("tuesday") && finishDayCardMeal.includes("breakfast")) {
-      console.log(this.state, "When Tuesday case is triggered")
-      const selectedRecipeIndex = startCardData.index
-      const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
-      const currentMealAgendaState = Object.assign(this.state.mealAgenda)
-      const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
-      this.setState({
-        mealAgenda: { ...currentMealAgendaState, Tuesday: { ...currentTuesdayMealPlan, Breakfast: selectedRecipe }}
-      })
-    }
-
-
-
+    // if (finishDayCardMealTime.includes("tuesday") && finishDayCardMealTime.includes("breakfast")) {
+    //   console.log(this.state, "When Tuesday case is triggered")
+    //   const selectedRecipeIndex = startCardData.index
+    //   const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
+    //   const currentMealAgendaState = Object.assign(this.state.mealAgenda)
+    //   const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
+    //   this.setState({
+    //     mealAgenda: { ...currentMealAgendaState, Tuesday: { ...currentTuesdayMealPlan, Breakfast: selectedRecipe }}
+    //   })
+    // }
   }
 
+  addRecipeToMealPlan = (startCardData, finishDayCardMealTime) => {
+    const day = finishDayCardMealTime.split('-')[0]
+    const mealTime = finishDayCardMealTime.split('-')[1]
+    const selectedRecipeIndex = startCardData.index
+    if (startCardData.droppableId === "recipe-card-1") {
+
+    } elseif {
+      
+    }
+  }
 
   render() {
     return (
