@@ -22,7 +22,7 @@ class RecipeCard extends Component {
 
   render() {
     return (
-      <Card color='red'>
+      <Card className='paper-card'>
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
           <Container>
@@ -31,6 +31,7 @@ class RecipeCard extends Component {
               <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
+
               >
                 {
                   this.props.title === "Your Top Recipes"
@@ -45,7 +46,6 @@ class RecipeCard extends Component {
             </Droppable>
           </Container>
         </Card.Content>
-
       </Card>
      );
   }

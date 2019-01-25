@@ -97,18 +97,18 @@ class Agenda extends Component {
     const selectedRecipeIndex = startCardData.index
     const currentMealAgendaState = Object.assign(this.state.mealAgenda)
     const currentDayMealPlan = Object.assign(this.state.mealAgenda[`${day}`])
-    
+
 
     if (startCardData.droppableId === "recipe-card-1") {
       const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
       this.setState({
         mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe }}
-      }) 
+      })
     } else if (startCardData.droppableId === "recipe-card-2") {
       const selectedRecipe = this.state.recipesData.recipeOfTheDay[selectedRecipeIndex]
       this.setState({
         mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe } }
-      }) 
+      })
       }
     }
 
@@ -116,7 +116,7 @@ class Agenda extends Component {
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}>
-        <h1>Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
+        <h1 class="ui block header" >Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1><br/>
         <Grid divided='vertically'>
           <Grid.Row columns={3}>
             <Grid.Column>
