@@ -67,12 +67,12 @@ class Agenda extends Component {
       return;
     }
 
-    // if (
-    //   destination.droppableId === source.droppableId &&
-    //   destination.index === source.index
-    // ) {
-    //   return;
-    // }
+  
+    if (
+      destination.droppableId.includes("recipe") && source.droppableId.includes("recipe")
+    ) {
+      return;
+    }
 
     const startCardData = source;
     const finishDayCardMealTime = destination.droppableId;
@@ -105,10 +105,15 @@ class Agenda extends Component {
         mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe }}
       })
     } else if (startCardData.droppableId === "recipe-card-2") {
-      const selectedRecipe = this.state.recipesData.recipeOfTheDay[selectedRecipeIndex]
-      this.setState({
-        mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe } }
-      })
+        const selectedRecipe = this.state.recipesData.recipeOfTheDay[selectedRecipeIndex]
+        this.setState({
+          mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe } }
+        })
+    } else if (startCardData.droppableId === "recipe-search-card") {
+        const selectedRecipe = this.state.recipesData.allRecipes[selectedRecipeIndex]
+        this.setState({
+          mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe } }
+        })
       }
     }
 
@@ -116,14 +121,14 @@ class Agenda extends Component {
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}>
-        <h1 class="ui block header" >Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1><br/>
+        <h1 className="ui block header" >Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1><br/>
         <Grid divided='vertically'>
           <Grid.Row columns={3}>
             <Grid.Column>
               <DayCardHolder mealAgenda={this.state.mealAgenda}/>
             </Grid.Column>
             <Grid.Column>
-              <RecipeSearchCard />
+              <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData}/>
             </Grid.Column>
             <Grid.Column>
               <RecipeCardHolder recipesData={this.state.recipesData} />

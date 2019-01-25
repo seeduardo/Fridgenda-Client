@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Container } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import { Draggable } from 'react-beautiful-dnd';
 
 

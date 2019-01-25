@@ -17,7 +17,7 @@ class RecipeCard extends Component {
 
   yourTopRecipes = () => {
     const topFiveRecipes = this.props.recipesData.topRecipes
-    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} id={recipe.id} index={index} />)
+    return topFiveRecipes.map((recipe, index) => <Recipe name={recipe.name} key={index} id={`${recipe.id}-top`} index={index} />)
   }
 
   render() {
