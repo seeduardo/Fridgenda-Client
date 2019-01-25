@@ -1,38 +1,38 @@
 const initialData = {
-  Monday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  monday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Tuesday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  tuesday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Wednesday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  wednesday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Thursday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  thursday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Friday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  friday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Saturday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  saturday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
-  Sunday: {
-    Breakfast: {},
-    Lunch: {},
-    Dinner: {},
+  sunday: {
+    breakfast: {},
+    lunch: {},
+    dinner: {},
   },
 }
 

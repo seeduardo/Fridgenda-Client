@@ -31,7 +31,7 @@ class DayCard extends Component {
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                       >
-                        {this.props.mealsThatDay.Breakfast.title}
+                        {this.props.mealsThatDay.breakfast.title}
                       </div>
                     )}
                   </Draggable>

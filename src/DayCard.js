@@ -22,7 +22,7 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Breakfast:</p>
-                  <p>{this.props.mealsThatDay.Breakfast.name}</p>
+                  <p>{this.props.mealsThatDay.breakfast.name}</p>
                   {provided.placeholder}
                 </div>
                 )}
@@ -32,7 +32,7 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Lunch:</p>
-                  <p>{this.props.mealsThatDay.Lunch.name}</p>
+                  <p>{this.props.mealsThatDay.lunch.name}</p>
                   {provided.placeholder}
                 </div>
                 )}
@@ -42,7 +42,7 @@ class DayCard extends Component {
                 <div ref={provided.innerRef}
                 {...provided.droppableProps}>
                   <p>Dinner:</p>
-                  <p>{this.props.mealsThatDay.Dinner.name}</p>
+                  <p>{this.props.mealsThatDay.dinner.name}</p>
                   {provided.placeholder}
                 </div>
                 )}
