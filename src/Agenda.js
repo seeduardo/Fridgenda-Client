@@ -15,7 +15,8 @@ class Agenda extends Component {
     allRecipes: [],
     topRecipes: [],
     recipeOfTheDay: []
-   }
+   },
+   allRecipesClicked: false,
   }
 
   componentDidMount = () => {
@@ -58,6 +59,11 @@ class Agenda extends Component {
     })
   }
 
+  showAllRecipes = () => {
+    const clickedStatus = this.state.allRecipesClicked
+    this.setState({allRecipesClicked: !clickedStatus})
+  }
+
   onDragEnd = result => {
     console.log(result);
 
@@ -66,7 +72,6 @@ class Agenda extends Component {
     if (!destination) {
       return;
     }
-
   
     if (
       destination.droppableId.includes("recipe") && source.droppableId.includes("recipe")
@@ -79,16 +84,6 @@ class Agenda extends Component {
 
     this.addRecipeToMealPlan(startCardData, finishDayCardMealTime)
 
-    // if (finishDayCardMealTime.includes("tuesday") && finishDayCardMealTime.includes("breakfast")) {
-    //   console.log(this.state, "When Tuesday case is triggered")
-    //   const selectedRecipeIndex = startCardData.index
-    //   const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
-    //   const currentMealAgendaState = Object.assign(this.state.mealAgenda)
-    //   const currentTuesdayMealPlan = Object.assign(this.state.mealAgenda.Tuesday)
-      // this.setState({
-      //   mealAgenda: { ...currentMealAgendaState, Tuesday: { ...currentTuesdayMealPlan, Breakfast: selectedRecipe }}
-    //   })
-    // }
   }
 
   addRecipeToMealPlan = (startCardData, finishDayCardMealTime) => {
@@ -128,10 +123,14 @@ class Agenda extends Component {
               <DayCardHolder mealAgenda={this.state.mealAgenda}/>
             </Grid.Column>
             <Grid.Column>
-              <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData}/>
+              {
+                this.state.allRecipesClicked 
+                ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} />
+                : null
+              }
             </Grid.Column>
             <Grid.Column>
-              <RecipeCardHolder recipesData={this.state.recipesData} />
+              <RecipeCardHolder recipesData={this.state.recipesData} showAllRecipes={this.showAllRecipes} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
