@@ -22,7 +22,12 @@ class RecipeCard extends Component {
 
   render() {
     return (
-      <Card className='paper-card'>
+      <Card 
+        className='paper-card' 
+        onClick={this.props.title === 'See all Recipes' 
+        ? () => this.props.showAllRecipes()
+        : null}
+      >
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
           <Container>

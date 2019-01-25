@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react'
 import moment from "moment";
 import { DragDropContext } from 'react-beautiful-dnd';
 import RecipeCardHolder from './RecipeCardHolder';
 import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
 import RecipeSearchCard from './RecipeSearchCard';
+
+
+
+// 
 
 
 class Agenda extends Component {
@@ -60,6 +64,7 @@ class Agenda extends Component {
   }
 
   showAllRecipes = () => {
+    console.log("Hello")
     const clickedStatus = this.state.allRecipesClicked
     this.setState({allRecipesClicked: !clickedStatus})
   }
@@ -112,6 +117,7 @@ class Agenda extends Component {
       }
     }
 
+
   render() {
     return (
       <DragDropContext
@@ -126,7 +132,7 @@ class Agenda extends Component {
               {
                 this.state.allRecipesClicked 
                 ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} />
-                : null
+                  : <Image src='https://cdn.pixabay.com/photo/2012/04/12/10/24/refrigerator-29345_1280.png' size='medium' style={{position: "fixed"}} />
               }
             </Grid.Column>
             <Grid.Column>
