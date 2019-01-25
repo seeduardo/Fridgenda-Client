@@ -116,7 +116,7 @@ class Agenda extends Component {
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}>
-        <h1>Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1>
+        <h1 class="ui block header" >Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1><br/>
         <Grid divided='vertically'>
           <Grid.Row columns={3}>
             <Grid.Column>

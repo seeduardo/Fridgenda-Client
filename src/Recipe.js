@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, Container } from 'semantic-ui-react'
 import { Draggable } from 'react-beautiful-dnd';
 
 
@@ -7,18 +8,24 @@ class Recipe extends Component {
 
   render() {
     return (
-      <Draggable draggableId={this.props.id}
-       index={this.props.index} >
-        { (provided) => (
-          <p
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            ref={provided.innerRef}
-          >
-            {this.props.name}
-          </p>
-        )}
-      </Draggable>
+
+          <Draggable draggableId={this.props.id}
+           index={this.props.index} >
+            { (provided) => (
+              <Card className='paper-card'>
+                <Card.Content>
+              <div
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                ref={provided.innerRef}
+              >
+                {this.props.name}
+              </div>
+              </Card.Content>
+            </Card>
+            )}
+          </Draggable>
+
       )
   }
 }

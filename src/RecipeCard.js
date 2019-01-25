@@ -22,7 +22,7 @@ class RecipeCard extends Component {
 
   render() {
     return (
-      <Card className='paper-card' color='red'>
+      <Card className='paper-card'>
         <Card.Content>
           <Card.Header>{this.props.title}</Card.Header>
           <Container>
@@ -46,7 +46,6 @@ class RecipeCard extends Component {
             </Droppable>
           </Container>
         </Card.Content>
-
       </Card>
      );
   }
