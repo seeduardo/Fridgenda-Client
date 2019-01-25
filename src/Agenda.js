@@ -5,7 +5,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import RecipeCardHolder from './RecipeCardHolder';
 import DayCardHolder from "./DayCardHolder";
 import initialData from './initialData';
-import Recipe from './Recipe';
+import RecipeSearchCard from './RecipeSearchCard';
 
 
 class Agenda extends Component {
@@ -123,6 +123,7 @@ class Agenda extends Component {
               <DayCardHolder mealAgenda={this.state.mealAgenda}/>
             </Grid.Column>
             <Grid.Column>
+              <RecipeSearchCard />
             </Grid.Column>
             <Grid.Column>
               <RecipeCardHolder recipesData={this.state.recipesData} />
