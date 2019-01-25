@@ -95,17 +95,20 @@ class Agenda extends Component {
     const day = finishDayCardMealTime.split('-')[0]
     const mealTime = finishDayCardMealTime.split('-')[1]
     const selectedRecipeIndex = startCardData.index
+    const currentMealAgendaState = Object.assign(this.state.mealAgenda)
+    const currentDayMealPlan = Object.assign(this.state.mealAgenda[`${day}`])
     
 
     if (startCardData.droppableId === "recipe-card-1") {
       const selectedRecipe = this.state.recipesData.topRecipes[selectedRecipeIndex]
-      const currentMealAgendaState = Object.assign(this.state.mealAgenda)
-      const currentDayMealPlan = Object.assign(this.state.mealAgenda[`${day}`])
       this.setState({
         mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe }}
       }) 
     } else if (startCardData.droppableId === "recipe-card-2") {
-
+      const selectedRecipe = this.state.recipesData.recipeOfTheDay[selectedRecipeIndex]
+      this.setState({
+        mealAgenda: { ...currentMealAgendaState, [day]: { ...currentDayMealPlan, [mealTime]: selectedRecipe } }
+      }) 
       }
     }
 
