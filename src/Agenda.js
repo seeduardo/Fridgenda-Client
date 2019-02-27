@@ -132,7 +132,7 @@ class Agenda extends Component {
               {
                 this.state.allRecipesClicked 
                 ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} />
-                  : <Image src='https://cdn.pixabay.com/photo/2012/04/12/10/24/refrigerator-29345_1280.png' size='medium' style={{position: "fixed"}} />
+                  : null
               }
             </Grid.Column>
             <Grid.Column>
