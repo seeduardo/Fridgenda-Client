@@ -77,7 +77,7 @@ class Agenda extends Component {
     if (!destination) {
       return;
     }
-  
+
     if (
       destination.droppableId.includes("recipe") && source.droppableId.includes("recipe")
     ) {
@@ -124,20 +124,18 @@ class Agenda extends Component {
         onDragEnd={this.onDragEnd}>
         <h1 className="ui block header" >Fridgenda - It's the {moment().format("wo")} Week of {moment().format("YYYY")}</h1><br/>
         <Grid divided='vertically'>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={2}>
             <Grid.Column>
               <DayCardHolder mealAgenda={this.state.mealAgenda}/>
             </Grid.Column>
             <Grid.Column>
               {
-                this.state.allRecipesClicked 
+                this.state.allRecipesClicked
                 ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} />
-                  : null
+                : <RecipeCardHolder recipesData={this.state.recipesData} showAllRecipes={this.showAllRecipes} />
               }
             </Grid.Column>
-            <Grid.Column>
-              <RecipeCardHolder recipesData={this.state.recipesData} showAllRecipes={this.showAllRecipes} />
-            </Grid.Column>
+            
           </Grid.Row>
         </Grid>
       </DragDropContext>

@@ -30,3 +30,33 @@
     transform: rotate(360deg);
   }
 }
+
+.FridgeDoor {
+  margin: auto;
+  position: relative;
+  background-color: white;
+  height: 100vh;
+  display: inline-block;
+}
+
+.fridge-door-image {
+  height: 100%;
+}
+
+.agenda-note-image {
+  position: absolute;
+  right: 43%;
+  top: 32%;
+}
+/* 
+.click-area {
+  color: black;
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 25%;
+  border: 1.5px solid black;
+  border-radius: 100%;
+  width: 50%;
+  height: 50%;
+} */
