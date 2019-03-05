@@ -15,10 +15,11 @@ class RecipeSearchCard extends Component {
           <Card.Content>
             <Card.Header>Recipes List</Card.Header>
             <Container>
+              <h5 onClick={this.props.showAllRecipes}>Click here to go back</h5>
               <Droppable droppableId={this.props.id} >
                 {(provided) => (
                   <div
-                    className='bastard'
+                    className='recipeList'
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                   >

@@ -34,7 +34,7 @@ class RecipeCard extends Component {
             <Droppable droppableId={this.props.id} >
               {(provided) => (
               <div
-                className={'bastard'}
+                className={'recipeList'}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
 
@@ -53,7 +53,7 @@ class RecipeCard extends Component {
           </Container>
         </Card.Content>
       </Card>
-     );
+    );
   }
 }
 

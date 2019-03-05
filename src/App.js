@@ -6,7 +6,7 @@ import FridgeDoor from './FridgeDoor';
 class App extends Component {
 
   state = {
-    agendaClicked: false
+    agendaClicked: false // ! should be false. Changed for testing.
   }
 
   handleAgendaClick = () => {

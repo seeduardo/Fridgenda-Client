@@ -13,14 +13,14 @@ import RecipeSearchCard from './RecipeSearchCard';
 
 
 class Agenda extends Component {
- state = {
-   mealAgenda: initialData,
-   recipesData: {
-    allRecipes: [],
-    topRecipes: [],
-    recipeOfTheDay: []
-   },
-   allRecipesClicked: false,
+  state = {
+    mealAgenda: initialData,
+    recipesData: {
+      allRecipes: [],
+      topRecipes: [],
+      recipeOfTheDay: []
+    },
+    allRecipesClicked: false,
   }
 
   componentDidMount = () => {
@@ -131,7 +131,7 @@ class Agenda extends Component {
             <Grid.Column>
               {
                 this.state.allRecipesClicked
-                ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} />
+                  ? <RecipeSearchCard id='recipe-search-card' recipesData={this.state.recipesData} showAllRecipes={this.showAllRecipes}/>
                 : <RecipeCardHolder recipesData={this.state.recipesData} showAllRecipes={this.showAllRecipes} />
               }
             </Grid.Column>
