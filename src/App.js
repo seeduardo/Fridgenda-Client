@@ -6,7 +6,7 @@ import FridgeDoor from './FridgeDoor';
 class App extends Component {
 
   state = {
-    agendaClicked: false // ! should be false. Changed for testing.
+    agendaClicked: true // ! should be false. Changed for testing.
   }
 
   handleAgendaClick = () => {
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.agendaClicked
-        ? <Agenda />
+        ? <Agenda className="Agenda"/>
         : <FridgeDoor handleAgendaClick={this.handleAgendaClick}/>}
       </div>
     );

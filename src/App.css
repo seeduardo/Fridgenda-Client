@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -31,6 +32,14 @@
   }
 }
 
+.Agenda {
+  margin: auto;
+  position: relative;
+  background-color: white;
+  height: 100vh;
+  display: inline-block;
+}
+
 .FridgeDoor {
   margin: auto;
   position: relative;
@@ -49,15 +58,19 @@
   top: 32%;
 }
 
-
 .recipeList {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.day-card {
+  position: absolute;
+  height: 10vh;
+}
+
 .paper-card {
-  width: 250px;
+  position: absolute;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
   text-align: center;
 }
@@ -65,16 +78,30 @@
 div.header {
   background-color: #f75b5b;
   color: white;
-  padding: 10px;
-  font-size: 40px;
+  padding: 5px;
 }
 
 div.container {
-  padding: 10px;
+  padding: 2px;
 }
 
+.ui.grid {
+  position: absolute;
+  overflow: hidden;
+  max-width: 60%;
+  margin-left: 20%;
+    height: 90vh;
+}
 
-/* 
+.ui.card {
+  font-size: 50%;
+}
+
+.ui.container {
+  width: 100%;
+}
+
+/*
 .click-area {
   color: black;
   position: absolute;
